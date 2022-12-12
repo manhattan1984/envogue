@@ -1,41 +1,107 @@
-import { Typography } from "@mui/material";
+import { ArrowDropDownCircleOutlined } from "@mui/icons-material";
+import { Typography, Box, Link, useScrollTrigger } from "@mui/material";
+import NextLink from "next/link";
+import HomeSection, { HomeSectionProps } from "../Component/HomeSection";
+
+const links = [
+  {
+    href: "",
+    text: "Presentation",
+  },
+  {
+    href: "",
+    text: "Why Invest With Us",
+  },
+  {
+    href: "",
+    text: "Start Investing",
+  },
+  {
+    href: "",
+    text: "How Does It Work",
+  },
+];
+
+type IndexLinkProp = {
+  href: string;
+  text: string;
+};
+
+export const TheLink = ({ href = "", text }: IndexLinkProp) => {
+  return (
+    <Link
+      color="#937d61"
+      underline="none"
+      href={href}
+      component={NextLink}
+      variant="caption"
+      my={2}
+      display="block"
+    >
+      {text}
+    </Link>
+  );
+};
+
+const homeSections: HomeSectionProps[] = [
+  {
+    image: "/logo-black.svg",
+    subtitle: "What We Do",
+    title: "THE BEST OPPORTUNITIES FOR SECURE INVESTMENTS",
+    body: `Some call a profitable investment opportunity luck, we call it competence and dedication.
+
+    At VOGUE CAPITAL we advise and manage top-tier investments in the Portuguese real estate market, in the last few years one of the most attractive in Europe . We do this through our "Vogue Homes - Fine Living" and "Portugal Opportunities Fund" (POF) programs that we would be delighted to present to you.
+    
+    Our journey has shown us that profitability and safety are achieved through competence, dedication and permanent innovation., as Winston Churchill said: “Luck does not exist, what they call luck is the care with the details."`,
+    points: [
+      "Access to the Portuguese Prime Real Estate market;",
+      `Advising on the P.O.F. Fund;`,
+      "New construction projects, renovation projects and greenfield;",
+      "High-end residential and hospitality market.",
+    ],
+  },
+];
 
 export default function Home() {
+  const trigger = useScrollTrigger();
   return (
-    <Typography>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque illo
-      incidunt rerum reiciendis mollitia eaque, amet placeat. Mollitia repellat
-      sequi unde asperiores. Maiores, repellendus iste exercitationem distinctio
-      sapiente ratione sint? Quaerat tenetur consequuntur voluptate cum?
-      Laborum, consectetur soluta. Vero, rerum. Ipsam tempora iusto, recusandae
-      deleniti maxime inventore facere magni cupiditate velit quia quaerat modi,
-      nulla, et optio accusantium doloribus iste? At delectus vel, totam
-      deleniti numquam eaque! Minima nesciunt debitis ullam ea omnis sapiente
-      obcaecati iusto recusandae consequuntur dicta hic soluta, dolores
-      necessitatibus veniam eligendi. Soluta architecto nostrum molestiae nemo.
-      Soluta minima inventore delectus id molestias doloremque similique eos
-      eligendi, est voluptates quia laborum vitae voluptatum odit sint aut
-      beatae, qui omnis esse culpa ipsa. Accusantium placeat totam libero
-      fugiat! Ullam dicta autem veniam mollitia temporibus exercitationem quos.
-      Ut facilis adipisci asperiores consectetur quae sapiente quia totam
-      laborum cupiditate sint officia fugiat, architecto, iusto doloremque
-      molestias at velit suscipit libero. Unde, nulla voluptatem. Iusto
-      assumenda amet, fuga necessitatibus, ab a repudiandae consectetur dolorum
-      quia natus nam quas fugit? Rerum nostrum suscipit vitae quas, repudiandae
-      velit porro dolor architecto error necessitatibus. Dolor facilis deserunt
-      ea facere repudiandae fugit sunt? Facilis aperiam sed voluptatibus! Illo
-      ratione ut mollitia ullam error atque, expedita voluptates delectus,
-      sapiente sunt distinctio quidem corrupti optio! Tempora, quibusdam. Aut
-      asperiores eius harum, impedit, iure possimus provident quaerat dolor iste
-      maiores perspiciatis beatae obcaecati. Perspiciatis ipsa optio iste
-      maiores, doloremque excepturi dolorem! Vel veniam molestiae, tempore dicta
-      optio voluptatum? Incidunt sunt hic, mollitia adipisci quos rerum
-      voluptatibus explicabo aliquam iusto inventore quo modi suscipit voluptate
-      tenetur aut necessitatibus officiis. Veritatis cumque rem doloribus harum
-      deserunt, necessitatibus rerum aliquam natus. Officiis, laboriosam. Illo
-      debitis assumenda ullam, molestiae quam iste et iusto recusandae vero iure
-      earum sint nobis molestias commodi unde distinctio eveniet sapiente. Ullam
-      saepe tenetur est, velit facilis animi!
-    </Typography>
+    <>
+      <Box
+        sx={{ bgcolor: "primary.main", color: "secondary.main" }}
+        height="100vh"
+        textTransform="uppercase"
+        textAlign="center"
+        display="flex"
+        flexDirection="column"
+        justifyContent="space-around"
+      >
+        <Typography variant="h3" fontWeight={300} letterSpacing={10}>
+          ENVOGUE CAPITAL
+        </Typography>
+
+        <Box>
+          {links.map((link, index) => (
+            <TheLink {...link} key={index} />
+          ))}
+        </Box>
+
+        <Box
+          // display="flex"
+          flexDirection="column"
+          textAlign="center"
+          alignItems="center"
+          display={trigger ? "none" : "flex"}
+        >
+          <Typography variant="caption">Scroll Down</Typography>
+          <ArrowDropDownCircleOutlined />
+        </Box>
+      </Box>
+
+      <Box>
+        {homeSections.map((homeSection, index) => (
+          <HomeSection {...homeSection} key={index} />
+        ))}
+      </Box>
+    </>
   );
 }

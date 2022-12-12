@@ -13,12 +13,16 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Cancel, CancelOutlined, Close } from "@mui/icons-material";
+import Image from "next/image";
+import { Collapse, useScrollTrigger } from "@mui/material";
 
 const drawerWidth = "75vw";
 const navItems = ["Invest With Us", "About Us", "Contact"];
 
 export default function TheAppBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const [color, setColor] = useState("primary");
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -46,16 +50,15 @@ export default function TheAppBar() {
     </Box>
   );
 
-  //   @ts-ignore
-  useEffect(() => {
-    window.onscroll = () => window.scrollY === 0 && alert("Top!");
+  const trigger = useScrollTrigger();
 
-    return () => (window.onscroll = null);
-  });
+  useEffect(() => {
+    setColor(() => (trigger ? "secondary" : "primary"));
+  }, [trigger]);
 
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar component="nav">
+      <AppBar component="nav" color={color} elevation={0}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             ENVOGUE
