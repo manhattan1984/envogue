@@ -1,10 +1,24 @@
 import { ArrowDropDownCircleOutlined } from "@mui/icons-material";
-import { Typography, Box, Link, useScrollTrigger, Grid } from "@mui/material";
+import {
+  Typography,
+  Box,
+  Link,
+  useScrollTrigger,
+  Grid,
+  Container,
+} from "@mui/material";
 import HomeSection, { HomeSectionProps } from "../Component/HomeSection";
 import Image from "next/image";
 import { TheLink } from "../Component/TheLink";
-import { benefitItems, homeSections, links } from "../constants";
+import {
+  benefitItems,
+  homeSections,
+  investmentItems,
+  links,
+} from "../constants";
 import BenefitItem from "../Component/BenefitItem";
+import { useParallax } from "react-scroll-parallax";
+import InvestmentItem from "../Component/InvestmentItem";
 
 export default function Home() {
   const trigger = useScrollTrigger();
@@ -108,6 +122,23 @@ export default function Home() {
               </Grid>
             ))}
           </Grid>
+        </Box>
+      </Box>
+      <Box>
+        <Typography my={4} variant="h5" textAlign="center" fontWeight={300}>
+          START INVESTING WITH ENVOGUE CAPITAL
+        </Typography>
+
+        <Box
+          display="flex"
+          flexDirection={{ xs: "column", md: "row" }}
+          justifyContent="center"
+          alignItems="center"
+          mx={1}
+        >
+          {investmentItems.map((investment, index) => (
+            <InvestmentItem {...investment} key={index} />
+          ))}
         </Box>
       </Box>
     </Box>

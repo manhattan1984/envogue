@@ -156,3 +156,74 @@ export const benefitItems = [
     text: "Tax exemption on dividends for non-resident investors.",
   },
 ];
+
+export const investmentItems = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    title: "VOGUE HOMES - FINE LIVING",
+    body: "Invest in the Prime Portuguese Residential market, and high-end projects having a conservative investment strategy, ally to privileged locations, ensures attractive returns to our investors. Profitability and Innovation, combined with Quality and Sophistication provides very high-end and contemporaneity projects, where all details are taken into consideration.",
+    points: [
+      {
+        title: "Investment Scope:",
+        text: "New construction projects, renovation projects, greenfield, high-end market residential and hospitality",
+      },
+      {
+        title: "Market strategy:",
+        text: "Prime locations, first line architecture, full development control",
+      },
+      {
+        title: "Minimum subscription amount:",
+        text: "€150.000",
+      },
+      {
+        title: "Average Revenues:",
+        text: "between 14% and 18% per year paid on the exit",
+      },
+      {
+        title: "Investment period:",
+        text: "40 to 48 months",
+      },
+      {
+        title: "Average ROE:",
+        text: "between 50% and 60%",
+      },
+    ],
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    title: "PORTUGAL OPPORTUNITIES FUND (POF)",
+    body: "POF is a Venture Capital Investment Fund focused on Real Estate Opportunities, targeting highly attractive, high-end projects with a conservative investment strategy. It was designed to get attractive returns to our investors, for that POF have group the best partners in financial asset management - QUADRANTIS, AND being VOGUE HOMES, with its large experience the investment advisor, also has additionally POF also have known personalities from Finance & Legal sector, as Advisory Board.",
+    points: [
+      {
+        title: "Investment Scope:",
+        text: "New construction projects, renovation projects, greenfield, high-end market residential and hospitality",
+      },
+      {
+        title: "Fund Manager:",
+        text: "Quadrantis Capital SCR SA",
+      },
+      {
+        title: "Investment Term:",
+        text: "10 years (minimum term 7 years)",
+      },
+      {
+        title: "Target Fund Size:",
+        text: "€35 Million",
+      },
+      {
+        title: "Investment Amount:",
+        text: "Min € 50,000 or € 500,000 (Golden Visa Investors)",
+      },
+      {
+        title: "Target Fund Return:",
+        text: "8% annually",
+      },
+      {
+        title: "Management Fee Fixed:",
+        text: "0.5% annually (with a minimum of €150.000)",
+      },
+    ],
+  },
+];
