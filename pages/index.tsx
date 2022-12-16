@@ -85,14 +85,16 @@ export default function Home() {
           The Portugal Opportunities Fund (POF) is regulated by the Portuguese
           Securities Market Commission - CMVM, has Quadrantis Capital as its
           management entity (registered and also regulated by the CMVM), and
-          VOGUE Homes S.A. as the Fund's Adviser and Asset Manager. All accounts
-          are audited by the international consultant Mazars, and the depositary
-          bank for the contracted securities (participation units) is BANKINTER.
+          VOGUE Homes S.A. as the Fund&apos;s Adviser and Asset Manager. All
+          accounts are audited by the international consultant Mazars, and the
+          depositary bank for the contracted securities (participation units) is
+          BANKINTER.
         </Typography>
       </Box>
       <Box py={4} display="flex" flexWrap={"wrap"} justifyContent="center">
         {logos.map((logo, index) => (
           <img
+            key={index}
             src={`/${logo}`}
             style={{
               width: "40%",
@@ -117,8 +119,8 @@ export default function Home() {
         <Box px={12}>
           <Grid container my={4} spacing={4}>
             {benefitItems.map((benefit, index) => (
-              <Grid item xs={12} md={6} lg={4}>
-                <BenefitItem {...benefit} key={index} />
+              <Grid item xs={12} md={6} lg={4} key={index}>
+                <BenefitItem {...benefit} />
               </Grid>
             ))}
           </Grid>
