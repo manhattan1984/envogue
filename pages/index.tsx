@@ -1,156 +1,10 @@
 import { ArrowDropDownCircleOutlined } from "@mui/icons-material";
-import { Typography, Box, Link, useScrollTrigger } from "@mui/material";
-import NextLink from "next/link";
+import { Typography, Box, Link, useScrollTrigger, Grid } from "@mui/material";
 import HomeSection, { HomeSectionProps } from "../Component/HomeSection";
 import Image from "next/image";
-
-const links = [
-  {
-    href: "",
-    text: "Presentation",
-  },
-  {
-    href: "",
-    text: "Why Invest With Us",
-  },
-  {
-    href: "",
-    text: "Start Investing",
-  },
-  {
-    href: "",
-    text: "How Does It Work",
-  },
-];
-
-type IndexLinkProp = {
-  href: string;
-  text: string;
-};
-
-export const TheLink = ({ href = "", text }: IndexLinkProp) => {
-  return (
-    <Link
-      color="#937d61"
-      underline="none"
-      href={href}
-      component={NextLink}
-      variant="caption"
-      my={2}
-      display="block"
-    >
-      {text}
-    </Link>
-  );
-};
-
-type BodyTypographyProps = {
-  text: string;
-};
-
-const BodyTypography = ({ text }: BodyTypographyProps) => {
-  return (
-    <Typography my={2} variant="body2" fontWeight={300}>
-      {text}
-    </Typography>
-  );
-};
-
-const homeSections: HomeSectionProps[] = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1620015092538-e33c665fc181?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    subtitle: "What We Do",
-    title: "THE BEST OPPORTUNITIES FOR SECURE INVESTMENTS",
-    body: (
-      <>
-        <BodyTypography
-          text={` Some call a profitable investment opportunity luck, we call it
-            competence and dedication.`}
-        />
-
-        <BodyTypography
-          text={` At VOGUE CAPITAL we advise and manage top-tier investments in the
-          Portuguese real estate market, in the last few years one of the most
-          attractive in Europe . We do this through our "Vogue Homes - Fine
-          Living" and "Portugal Opportunities Fund" (POF) programs that we would
-          be delighted to present to you.`}
-        />
-
-        <BodyTypography
-          text={`Our journey has shown us that profitability and safety are achieved
-          through competence, dedication and permanent innovation., as Winston
-          Churchill said: “Luck does not exist, what they call luck is the care
-          with the details."`}
-        />
-      </>
-    ),
-    points: [
-      "Access to the Portuguese Prime Real Estate market;",
-      `Advising on the P.O.F. Fund;`,
-      "New construction projects, renovation projects and greenfield;",
-      "High-end residential and hospitality market.",
-    ],
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1628744876657-abd5086695dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    subtitle: "MARKET APPROACH",
-    title: "HIGH POTENTIAL ASSETS FOR HIGH STANDARD CUSTOMERS",
-    body: (
-      <>
-        <BodyTypography
-          text={`Experience, transparency and solidity make VOGUE CAPITAL the best partner to guide you in the real estate investment market, through access to premium investments in privileged locations, where we develop innovative architectural projects.`}
-        />
-
-        <BodyTypography
-          text={`All our investments are based on Prime or Ultra Prime assets aimed at high-end national or international clients with the option of accessing the Portugal Golden Visa program.`}
-        />
-      </>
-    ),
-    points: [
-      "Prime locations",
-      `First line architecture`,
-      "Top quality construction and materials",
-      "Full development control",
-    ],
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=881&q=80",
-    subtitle: "What We Do",
-    title: "THE BEST OPPORTUNITIES FOR SECURE INVESTMENTS",
-    body: (
-      <>
-        <BodyTypography
-          text={` Some call a profitable investment opportunity luck, we call it
-            competence and dedication.`}
-        />
-
-        <BodyTypography
-          text={` At VOGUE CAPITAL we advise and manage top-tier investments in the
-          Portuguese real estate market, in the last few years one of the most
-          attractive in Europe . We do this through our "Vogue Homes - Fine
-          Living" and "Portugal Opportunities Fund" (POF) programs that we would
-          be delighted to present to you.`}
-        />
-
-        <BodyTypography
-          text={`Our journey has shown us that profitability and safety are achieved
-          through competence, dedication and permanent innovation., as Winston
-          Churchill said: “Luck does not exist, what they call luck is the care
-          with the details."`}
-        />
-      </>
-    ),
-    points: [
-      "Access to the Portuguese Prime Real Estate market;",
-      `Advising on the P.O.F. Fund;`,
-      "New construction projects, renovation projects and greenfield;",
-      "High-end residential and hospitality market.",
-    ],
-  },
-];
+import { TheLink } from "../Component/TheLink";
+import { benefitItems, homeSections, links } from "../constants";
+import BenefitItem from "../Component/BenefitItem";
 
 export default function Home() {
   const trigger = useScrollTrigger();
@@ -202,7 +56,7 @@ export default function Home() {
         ))}
       </Box>
 
-      <Box mx={2} pr={2} my={4}>
+      <Box px={{ xs: 6 }} my={4} pl={{ md: 12 }} mr={{ md: 12 }}>
         <Typography
           variant="caption"
           textTransform="uppercase"
@@ -228,11 +82,33 @@ export default function Home() {
             src={`/${logo}`}
             style={{
               width: "40%",
-              height: "auto",
-              marginRight: "8px"
+              height: "70px",
+              maxWidth: "100px",
+              marginRight: "8px",
             }}
           />
         ))}
+      </Box>
+      <Box py={4} sx={{ bgcolor: "secondary.main", color: "primary.main" }}>
+        <Typography
+          letterSpacing={1}
+          mx={10}
+          fontWeight={300}
+          variant="h5"
+          textTransform="uppercase"
+          textAlign="center"
+        >
+          get all the benefits from investing with us
+        </Typography>
+        <Box px={12}>
+          <Grid container my={4} spacing={4}>
+            {benefitItems.map((benefit, index) => (
+              <Grid item xs={12} md={6} lg={4}>
+                <BenefitItem {...benefit} key={index} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </Box>
     </Box>
   );

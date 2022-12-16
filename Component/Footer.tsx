@@ -1,7 +1,7 @@
 import { Box, Container, Typography, Link } from "@mui/material";
 import Image from "next/image";
 import React from "react";
-import { TheLink } from "../pages";
+import { TheLink } from "./TheLink";
 
 type FooterGroupProps = {
   children: React.ReactElement;
@@ -18,7 +18,7 @@ const footerGroups: FooterGroupProps[] = [
           1200-246 Lisboa, Portugal
         </Typography>
         <Typography variant="subtitle2">+351 213 461 246</Typography>
-        <TheLink text="info@vogue-capital.com" />
+        <TheLink text="info@vogue-capital.com" href={""} />
       </>
     ),
   },
@@ -26,9 +26,9 @@ const footerGroups: FooterGroupProps[] = [
     title: "Browse",
     children: (
       <>
-        <TheLink text="Invest with us" />
-        <TheLink text="About Us" />
-        <TheLink text="Contact & Support" />
+        <TheLink text="Invest with us" href={""} />
+        <TheLink text="About Us" href={""} />
+        <TheLink text="Contact & Support" href={""} />
       </>
     ),
   },
@@ -36,9 +36,9 @@ const footerGroups: FooterGroupProps[] = [
     title: "Legal Terms",
     children: (
       <>
-        <TheLink text="Legal Terms & Copyright" />
-        <TheLink text="About Cookies" />
-        <TheLink text="Contact us" />
+        <TheLink text="Legal Terms & Copyright" href={""} />
+        <TheLink text="About Cookies" href={""} />
+        <TheLink text="Contact us" href={""} />
       </>
     ),
   },
