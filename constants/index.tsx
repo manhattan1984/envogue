@@ -126,32 +126,32 @@ export const homeSections: HomeSectionProps[] = [
 
 export const benefitItems = [
   {
-    icon: <HomeWorkOutlined fontSize="medium" color="GrayText" />,
+    icon: <HomeWorkOutlined fontSize="medium" color="primary" />,
     title: "premium portfolio",
     text: "Possibility to participate directly in the real estate investment market, with assets for the High-end / Prime Residential market",
   },
   {
-    icon: <MonetizationOnOutlined fontSize="medium" color="GrayText" />,
+    icon: <MonetizationOnOutlined fontSize="medium" color="primary" />,
     title: "INVESTMENT REVENUES",
     text: "Get an annual income of 8% + 12% performance with your participation",
   },
   {
-    icon: <WidgetsOutlined fontSize="medium" color="GrayText" />,
+    icon: <WidgetsOutlined fontSize="medium" color="primary" />,
     title: "DIVERSIFICATION",
     text: "Selective diversification of investment across various real estate projects in the most sought after areas of the market.",
   },
   {
-    icon: <BookmarkAddedOutlined fontSize="medium" color="GrayText" />,
+    icon: <BookmarkAddedOutlined fontSize="medium" color="primary" />,
     title: "QUALIFY FOR GOLDEN VISA",
     text: "Simplest way to qualify for the Gold Visa program, which in this type of investment is €500,000 .",
   },
   {
-    icon: <ClassOutlined fontSize="medium" color="GrayText" />,
+    icon: <ClassOutlined fontSize="medium" color="primary" />,
     title: "LIABILTY & REGULATION",
     text: "Professional management, regulated by the CMVM (Securities Markets Commission), periodic audits, assessments by certified experts.",
   },
   {
-    icon: <StarBorderOutlined fontSize="medium" color="GrayText" />,
+    icon: <StarBorderOutlined fontSize="medium" color="primary" />,
     title: "TAX EXEMPTION FOR NHR",
     text: "Tax exemption on dividends for non-resident investors.",
   },

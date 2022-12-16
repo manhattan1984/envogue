@@ -28,6 +28,7 @@ const HomeSection = ({
     <Box
       // px={2}
       display={{ xs: "block", md: "flex" }}
+      // @ts-ignore
       flexDirection={checkIfEven(index) ? "row-reverse" : "row"}
       // justifyContent="space-between"
       sx={{ bgcolor: "primary.main", color: "secondary.main" }}
