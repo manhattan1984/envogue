@@ -168,7 +168,7 @@ export default function Home() {
 
         <Grid container sx={{}}>
           {steps.map((step, index) => (
-            <MySteps text={step} index={index + 1} />
+            <MySteps text={step} index={index + 1} key={index} />
           ))}
         </Grid>
 
