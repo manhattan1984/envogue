@@ -26,6 +26,7 @@ const InvestmentItem = ({
       mx={1}
       sx={{
         width: { md: "30vw" },
+        // height: "70vh"
       }}
     >
       <Box sx={{ bgcolor: "secondary.main", color: "primary.main" }}>

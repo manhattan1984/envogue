@@ -6,19 +6,28 @@ import {
   useScrollTrigger,
   Grid,
   Container,
+  Stepper,
+  Step,
+  StepLabel,
+  Button,
+  Fade,
 } from "@mui/material";
 import HomeSection, { HomeSectionProps } from "../Component/HomeSection";
 import Image from "next/image";
 import { TheLink } from "../Component/TheLink";
 import {
+  advantages,
   benefitItems,
   homeSections,
   investmentItems,
   links,
+  steps,
 } from "../constants";
 import BenefitItem from "../Component/BenefitItem";
 import { useParallax } from "react-scroll-parallax";
 import InvestmentItem from "../Component/InvestmentItem";
+import MySteps from "../Component/MySteps";
+import AdvantageItem from "../Component/AdvantageItem";
 
 export default function Home() {
   const trigger = useScrollTrigger();
@@ -48,16 +57,18 @@ export default function Home() {
           ))}
         </Box>
 
-        <Box
-          // display="flex"
-          flexDirection="column"
-          textAlign="center"
-          alignItems="center"
-          display={trigger ? "none" : "flex"}
-        >
-          <Typography variant="caption">Scroll Down</Typography>
-          <ArrowDropDownCircleOutlined />
-        </Box>
+        <Fade in={!trigger}>
+          <Box
+            flexDirection="column"
+            textAlign="center"
+            alignItems="center"
+            display="flex"
+            visibility={trigger ? "hidden" : "visible"}
+          >
+            <Typography variant="caption">Scroll Down</Typography>
+            <ArrowDropDownCircleOutlined />
+          </Box>
+        </Fade>
       </Box>
 
       <Box
@@ -135,13 +146,82 @@ export default function Home() {
           display="flex"
           flexDirection={{ xs: "column", md: "row" }}
           justifyContent="center"
-          alignItems="center"
+          alignItems="flex-start"
           mx={1}
         >
           {investmentItems.map((investment, index) => (
             <InvestmentItem {...investment} key={index} />
           ))}
         </Box>
+      </Box>
+
+      <Box py={4} px={3} textAlign="center">
+        <Typography variant="h5" fontWeight={300} my={2}>
+          HOW DOES IT WORK?
+        </Typography>
+
+        <Typography variant="body2" color="GrayText">
+          Each process is carried out with maximum security and diligence and
+          our team will take care of accompanying you throughout all the steps
+          and procedures.
+        </Typography>
+
+        <Grid container sx={{}}>
+          {steps.map((step, index) => (
+            <MySteps text={step} index={index + 1} />
+          ))}
+        </Grid>
+
+        <Button
+          color="secondary"
+          variant="outlined"
+          sx={{ borderRadius: 0, p: 1, my: 4 }}
+        >
+          GET STARTED
+        </Button>
+      </Box>
+
+      <Box
+        px={2}
+        py={4}
+        textAlign="center"
+        sx={{
+          bgcolor: "secondary.main",
+          color: "primary.main",
+        }}
+      >
+        <Typography variant="h5" fontWeight={400} mb={4}>
+          THE ADVANTAGE OF INVESTING WITH ENVOGUE CAPITAL
+        </Typography>
+
+        <Box display={{ md: "flex" }} px={{ md: 15 }}>
+          {advantages.map((advantage, index) => (
+            <AdvantageItem {...advantage} key={index} />
+          ))}
+        </Box>
+      </Box>
+
+      <Box
+        textAlign="center"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+        sx={{
+          backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          height: "70vh",
+          width: "100%",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <Typography my={3} color="secondary.main" variant="h1">
+          ARE YOU IN?
+        </Typography>
+        <Button variant="outlined" color="secondary">
+          GENERAL INQUIRY
+        </Button>
       </Box>
     </Box>
   );

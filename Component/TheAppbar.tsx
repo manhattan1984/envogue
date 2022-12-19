@@ -58,6 +58,7 @@ export default function TheAppBar() {
 
   return (
     <Box sx={{ display: "flex" }}>
+      {/* @ts-ignore */}
       <AppBar component="nav" color={color} elevation={0}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -74,7 +75,9 @@ export default function TheAppBar() {
           </IconButton>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} color={!trigger ? "secondary" : "primary"}>{item}</Button>
+              <Button key={item} color={!trigger ? "secondary" : "primary"}>
+                {item}
+              </Button>
             ))}
           </Box>
         </Toolbar>

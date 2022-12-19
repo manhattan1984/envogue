@@ -8,6 +8,9 @@ export const envogueTheme = createTheme({
     secondary: {
       main: "#fff",
     },
+    earth: {
+      main: "#937d61",
+    },
   },
   typography: {
     fontFamily: "Montserrat Alternates",

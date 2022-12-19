@@ -227,3 +227,31 @@ export const investmentItems = [
     ],
   },
 ];
+
+export const steps = [
+  "Opportunity assessment and investment analysis.",
+  "Investment decision and investment selection.",
+  "Legal and comercial Due diligence.",
+  "Adherence to investment.",
+];
+
+export const advantages = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    title: "TRACK RECORD",
+    text: "Investment potential, prime location and first-line architecture",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1552819686-25b0c726045d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+    title: "GOLDEN VISA",
+    text: "Apply for Portuguese citizenship and gain access to all EU market",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1578308148355-6e1b5300f134?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80",
+    title: "ABOUT US",
+    text: "Knowledge and expertise for the success of your investments.",
+  },
+];
