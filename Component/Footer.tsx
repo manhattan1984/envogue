@@ -75,8 +75,8 @@ const Footer = () => {
         <Typography variant="caption">
           2022 © Envogue Capital - All rights reserved
         </Typography>
-        <Typography variant="caption" display="block">
-          Light
+        <Typography fontWeight="bolder" variant="caption" display="block">
+          Light Web Dev
         </Typography>
       </Box>
     </Box>

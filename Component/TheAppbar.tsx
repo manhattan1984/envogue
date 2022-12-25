@@ -65,7 +65,7 @@ export default function TheAppBar() {
   const trigger = useScrollTrigger();
 
   useEffect(() => {
-    setColor(() => (trigger ? "secondary" : "primary"));
+    setColor(() => (!trigger ? "secondary" : "primary"));
   }, [trigger]);
 
   return (
@@ -79,7 +79,7 @@ export default function TheAppBar() {
         <Toolbar>
           <Typography
             variant="h6"
-            color={!trigger ? "secondary" : "primary"}
+            color={color}
             component="div"
             sx={{ flexGrow: 1 }}
             onClick={() => router.push("/")}
@@ -87,7 +87,8 @@ export default function TheAppBar() {
             ENVOGUE
           </Typography>
           <IconButton
-            color="inherit"
+            // @ts-ignore
+            color={color}
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
@@ -102,7 +103,8 @@ export default function TheAppBar() {
                   router.push(link);
                 }}
                 key={title}
-                color={!trigger ? "secondary" : "primary"}
+                // @ts-ignore
+                color={color}
               >
                 {title}
               </Button>
