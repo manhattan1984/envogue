@@ -28,9 +28,13 @@ import { useParallax } from "react-scroll-parallax";
 import InvestmentItem from "../Component/InvestmentItem";
 import MySteps from "../Component/MySteps";
 import AdvantageItem from "../Component/AdvantageItem";
+import { useRouter } from "next/router";
+import ScrollDown from "../Component/ScrollDown";
+import AreYouIn from "../Component/AreYouIn";
 
 export default function Home() {
   const trigger = useScrollTrigger();
+  const router = useRouter();
   const logos = [
     "vogue-logo.svg",
     "vogue-logo.svg",
@@ -57,21 +61,11 @@ export default function Home() {
           ))}
         </Box>
 
-        <Fade in={!trigger}>
-          <Box
-            flexDirection="column"
-            textAlign="center"
-            alignItems="center"
-            display="flex"
-            visibility={trigger ? "hidden" : "visible"}
-          >
-            <Typography variant="caption">Scroll Down</Typography>
-            <ArrowDropDownCircleOutlined />
-          </Box>
-        </Fade>
+        <ScrollDown trigger={trigger} />
       </Box>
 
       <Box
+        id="presentation"
         sx={{
           bgcolor: "primary.main",
         }}
@@ -105,6 +99,7 @@ export default function Home() {
       <Box py={4} display="flex" flexWrap={"wrap"} justifyContent="center">
         {logos.map((logo, index) => (
           <img
+            loading="lazy"
             key={index}
             src={`/${logo}`}
             style={{
@@ -116,7 +111,11 @@ export default function Home() {
           />
         ))}
       </Box>
-      <Box py={4} sx={{ bgcolor: "secondary.main", color: "primary.main" }}>
+      <Box
+        id="benefits"
+        py={4}
+        sx={{ bgcolor: "secondary.main", color: "primary.main" }}
+      >
         <Typography
           letterSpacing={1}
           mx={10}
@@ -137,7 +136,7 @@ export default function Home() {
           </Grid>
         </Box>
       </Box>
-      <Box>
+      <Box id="invest">
         <Typography my={4} variant="h5" textAlign="center" fontWeight={300}>
           START INVESTING WITH ENVOGUE CAPITAL
         </Typography>
@@ -155,7 +154,7 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box py={4} px={3} textAlign="center">
+      <Box id="howitworks" py={4} px={3} textAlign="center">
         <Typography variant="h5" fontWeight={300} my={2}>
           HOW DOES IT WORK?
         </Typography>
@@ -176,6 +175,9 @@ export default function Home() {
           color="secondary"
           variant="outlined"
           sx={{ borderRadius: 0, p: 1, my: 4 }}
+          onClick={() => {
+            router.push("contact");
+          }}
         >
           GET STARTED
         </Button>
@@ -201,28 +203,7 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box
-        textAlign="center"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        flexDirection="column"
-        sx={{
-          backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-          height: "70vh",
-          width: "100%",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <Typography my={3} color="secondary.main" variant="h1">
-          ARE YOU IN?
-        </Typography>
-        <Button variant="outlined" color="secondary">
-          GENERAL INQUIRY
-        </Button>
-      </Box>
+      <AreYouIn />
     </Box>
   );
 }

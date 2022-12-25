@@ -2,6 +2,7 @@ import { Box, Typography, List, ListItem, Divider } from "@mui/material";
 import Image from "next/image";
 import React, { ReactElement } from "react";
 import { useParallax } from "react-scroll-parallax";
+import MyList from "./MyList";
 
 export type HomeSectionProps = {
   image: string;
@@ -77,21 +78,7 @@ const HomeSection = ({
           }}
         />
 
-        <List>
-          {points.map((point, index) => (
-            <ListItem
-              sx={{
-                display: "list-item",
-                listStyleType: "disc",
-                ml: 2,
-                color: "GrayText",
-              }}
-              key={index}
-            >
-              <Typography variant="caption">{point}</Typography>
-            </ListItem>
-          ))}
-        </List>
+        <MyList points={points} />
       </Box>
     </Box>
   );

@@ -11,19 +11,19 @@ import { HomeSectionProps } from "../Component/HomeSection";
 
 export const links = [
   {
-    href: "",
+    href: "#presentation",
     text: "Presentation",
   },
   {
-    href: "",
+    href: "#benefits",
     text: "Why Invest With Us",
   },
   {
-    href: "",
+    href: "#invest",
     text: "Start Investing",
   },
   {
-    href: "",
+    href: "#howitworks",
     text: "How Does It Work",
   },
 ];
@@ -253,5 +253,41 @@ export const advantages = [
       "https://images.unsplash.com/photo-1578308148355-6e1b5300f134?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80",
     title: "ABOUT US",
     text: "Knowledge and expertise for the success of your investments.",
+  },
+];
+
+export const houses = [
+  "https://images.unsplash.com/photo-1549388604-817d15aa0110",
+  "https://images.unsplash.com/photo-1563298723-dcfebaa392e3",
+  "https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGhvdXNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdXNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
+];
+
+export const aboutUsPoints = [
+  "Advise and Asset Management",
+  "Premium Residential & Turistic Real Estate",
+  "Access to the Portugal Golden Visa",
+  "Liability and Regulation",
+  "Support step-by-step",
+];
+
+export const directors = [
+  {
+    name: "Mile Morales",
+    img: "https://images.unsplash.com/photo-1584119164246-461d43e9bab3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGFuZHNvbWUlMjBibGFjayUyMG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60",
+    title: "CEO",
+  },
+  {
+    name: "Hobie Brown",
+    img: "https://images.unsplash.com/photo-1514222709107-a180c68d72b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80",
+    title: "President",
+  },
+  {
+    name: "Gwen Stacy",
+    img: "https://images.unsplash.com/photo-1517256742927-ccff23d76be8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmVhdXRpZnVsJTIwYmxhY2slMjB3b21hbiUyMHBvcnRyYWl0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60",
+    title: "CFO",
   },
 ];

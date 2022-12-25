@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ParallaxProvider>
         <CssBaseline />
         <TheAppbar />
-        <Toolbar />
+        {/* <Toolbar /> */}
         <Component {...pageProps} />
         <Footer />
       </ParallaxProvider>

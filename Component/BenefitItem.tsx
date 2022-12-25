@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import { Box, Divider, Typography } from "@mui/material";
+import MyDivider from "./MyDivider";
 
 type BenefitItemProps = {
   icon: ReactElement;
@@ -36,14 +37,7 @@ const BenefitItem = ({ icon, title, text }: BenefitItemProps) => {
         {title}
       </Typography>
 
-      <Box
-        sx={{
-          width: "25px",
-          height: "2px",
-          bgcolor: "primary.main",
-          m: { xs: "0 auto 15px", md: "0 0 1rem 0" },
-        }}
-      ></Box>
+      <MyDivider color="primary.main" />
 
       <Typography variant="subtitle2">{text}</Typography>
     </Box>

@@ -15,14 +15,21 @@ import Button from "@mui/material/Button";
 import { Cancel, CancelOutlined, Close } from "@mui/icons-material";
 import Image from "next/image";
 import { Collapse, useScrollTrigger } from "@mui/material";
+import { useRouter } from "next/router";
 
 const drawerWidth = "75vw";
-const navItems = ["Invest With Us", "About Us", "Contact"];
+const navItems = [
+  { title: "Invest With Us", link: "/" },
+  { title: "About Us", link: "aboutus" },
+  { title: "Contact", link: "contact" },
+];
 
 export default function TheAppBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const [color, setColor] = useState("primary");
+  const [color, setColor] = useState("secondary");
+
+  const router = useRouter();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -39,10 +46,15 @@ export default function TheAppBar() {
         </IconButton>
       </Box>
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "left" }}>
-              <ListItemText primary={item} />
+        {navItems.map(({ title, link }) => (
+          <ListItem key={title} disablePadding>
+            <ListItemButton
+              onClick={() => {
+                router.push(link);
+              }}
+              sx={{ textAlign: "left" }}
+            >
+              <ListItemText primary={title} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -59,9 +71,19 @@ export default function TheAppBar() {
   return (
     <Box sx={{ display: "flex" }}>
       {/* @ts-ignore */}
-      <AppBar component="nav" color={color} elevation={0}>
+      <AppBar
+        component="nav"
+        color={trigger ? "secondary" : "transparent"}
+        elevation={0}
+      >
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            color={!trigger ? "secondary" : "primary"}
+            component="div"
+            sx={{ flexGrow: 1 }}
+            onClick={() => router.push("/")}
+          >
             ENVOGUE
           </Typography>
           <IconButton
@@ -74,9 +96,15 @@ export default function TheAppBar() {
             <MenuIcon fontSize="large" />
           </IconButton>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} color={!trigger ? "secondary" : "primary"}>
-                {item}
+            {navItems.map(({ title, link }) => (
+              <Button
+                onClick={() => {
+                  router.push(link);
+                }}
+                key={title}
+                color={!trigger ? "secondary" : "primary"}
+              >
+                {title}
               </Button>
             ))}
           </Box>
