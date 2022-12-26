@@ -75,6 +75,9 @@ export default function TheAppBar() {
         component="nav"
         color={trigger ? "secondary" : "transparent"}
         elevation={0}
+        sx={{
+          // mixBlendMode: "lighten",
+        }}
       >
         <Toolbar>
           <Typography

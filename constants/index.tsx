@@ -7,6 +7,7 @@ import {
   WidgetsOutlined,
 } from "@mui/icons-material";
 import { BodyTypography } from "../Component/BodyTypography";
+import { ContactItemProps } from "../Component/ContactItem";
 import { HomeSectionProps } from "../Component/HomeSection";
 
 export const links = [
@@ -289,5 +290,18 @@ export const directors = [
     name: "Gwen Stacy",
     img: "https://images.unsplash.com/photo-1517256742927-ccff23d76be8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmVhdXRpZnVsJTIwYmxhY2slMjB3b21hbiUyMHBvcnRyYWl0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60",
     title: "CFO",
+  },
+];
+
+export const contactItems: ContactItemProps[] = [
+  {
+    name: "Office and Location",
+    title: `Rua Luz Soriano`,
+    phone: "+351213461246",
+  },
+  {
+    name: "Investment Support",
+    title: "Gwen Stacy",
+    phone: "+351910261404",
   },
 ];
