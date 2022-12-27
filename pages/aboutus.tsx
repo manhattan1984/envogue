@@ -32,10 +32,11 @@ const AboutUs = () => {
             height: "100vh",
             filter: "brightness(50%)",
           }}
-          autoPlay
-          loop
-          muted
-          playsInline
+          autoPlay={true}
+          loop={true}
+          muted={true}
+          playsinline={true}
+          playsInline={true}
         >
           <source src="/video.mp4" type="video/mp4"></source>
         </video>
