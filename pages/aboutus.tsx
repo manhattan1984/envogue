@@ -35,7 +35,7 @@ const AboutUs = () => {
           autoPlay={true}
           loop={true}
           muted={true}
-          playsinline={true}
+          // playsinline={true}
           playsInline={true}
         >
           <source src="/video.mp4" type="video/mp4"></source>
